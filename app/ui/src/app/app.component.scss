@@ -18,6 +18,16 @@ main {
 }
 
 .pf-c-page__header {
+  color: #ffffff;
+  color: #ededed;
+  border-color: #bbb;
+  color: #39a5dc;
+  //a:link:
+  color: #39a5dc;
+  //a:hover:
+  color: (#39a5dc, 15%);
+  //background-color: 
+  background-color: #282d33;
   display: flex;
   align-items: center;
   grid-area: header;
@@ -25,17 +35,45 @@ main {
   flex-wrap: wrap;
   max-width: 100%;
   min-height: 76px;
-  border: 1px solid red;
+  //border: 1px solid red;
 
   .pf-c-page__header-brand {
+    padding-left: 16px;
+    @media (min-width: 768px) {
+      padding-left: 32px;
+      flex-basis: 290px;
+      align-self: stretch;
+      padding-right: 32px;
+      background-color: rgba(#000000, .62);
+    }
     .pf-c-page__header-brand-toggle {
+      button.pf-c-button {
+        padding: var(--pf-c-page__header-sidebar-toggle__c-button--Padding);
+        margin-right: var(--pf-c-page__header-sidebar-toggle__c-button--MarginRight);
+        margin-left: calc(4px * -1);
+        font-size: 24px;
+        line-height: 1;
+        @media screen and (min-width: 768px) {
+          margin-left: calc(8px * -1);
+        }
+        i.fas.fa-bars {
 
+        }
+      }
     }
     a.pf-c-page__header-brand-link {
 
     }
   }
   .pf-c-page__header-tools {
+    align-items: center;
+    margin-top: 8px;
+    margin-right: 16px;
+    margin-bottom: 8px;
+    margin-left: auto;
+    @media screen and (min-width: 768px) {
+      margin-right: 32px;
+    }
    .pf-l-toolbar {
      .pf-l-toolbar__group {
        .pf-l-toolbar__item {
