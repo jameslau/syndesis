@@ -21,163 +21,56 @@
       <ng-container *ngTemplateOutlet="brandTemplate"></ng-container>
     </nav>
 
+    <!-- MASTHEAD PF4 CONVERSION -->
     <!-- Navbar: Logged In -->
-    <div *ngIf="loggedIn" class="navbar navbar-pf-vertical">
-      <div class="navbar-header">
-
-        <!-- Toggle Sidebar-->
-        <button
-          aria-label="Toggle Main Naivgation"
-          type="button"
-          class="navbar-toggle">
-          <span class="sr-only">{{ 'menu.navbartoggle' | synI18n }}</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-        <!-- Logo -->
-        <ng-container *ngTemplateOutlet="brandTemplate"></ng-container>
+    <div role="banner" class="pf-c-page__header">
+      <div class="pf-c-page__header-brand">
+        <div class="pf-c-page__header-brand-toggle">
+          <button class="pf-c-button pf-m-plain" id="page-layout-default-nav-nav-toggle" aria-label="Toggle primary navigation">
+                  <i class="fas fa-bars" aria-hidden="true"></i></button>
+        </div>
+        <a class="pf-c-page__header-brand-link">
+            <img class="pf-c-brand" src="/assets/images/l_pf-reverse-164x11.png" alt="Patternfly Logo">
+        </a>
       </div>
-
-      <!-- Top Navbar -->
-
-      <nav class="collapse navbar-collapse">
-        <ul class="nav navbar-nav navbar-right navbar-iconic" role="list">
-
-          <!-- Help Navbar -->
-
-          <li dropdown class="dropdown help">
-            <button dropdownToggle
-                    class="btn btn-link dropdown-toggle nav-item-iconic"
-                    id="helpDropdown"
-                    aria-haspopup="true"
-                    aria-label="Help Dropdown"
-                    aria-controls="helpDropdownMenu"
-                    role="link"
-                    aria-expanded="true">
-              <span title="Help" class="pficon pficon-help"></span>
-            </button>
-            <ul class="dropdown-menu" id="helpDropdownMenu" aria-labelledby="helpDropdown">
-              <li>
-                <a [attr.href]="'links.tutorial' | synI18n"
-                    rel="nofollow"
-                    role="link"
-                    target="_blank">{{ 'header.helpmenu.sampletutorials' | synI18n }}</a>
-              </li>
-              <li>
-                <a [attr.href]="'links.userguide' | synI18n:' '"
-                    rel="nofollow"
-                    role="link"
-                    target="_blank">{{ 'header.helpmenu.userguide' | synI18n }}</a>
-              <li>
-                <a [attr.href]="'links.connectorsguide' | synI18n:' '"
-                    rel="nofollow"
-                    role="link"
-                    target="_blank">{{ 'header.helpmenu.connectorsguide' | synI18n }}</a>
-              <li>
-                <a routerLink="/support" role="link">{{ 'support' | synI18n }}</a>
-              </li>
-              <li>
-                <a [attr.href]="'links.contactus' | synI18n"
-                rel="nofollow"
-                role="link"
-                target="_blank">{{ 'contactus' | synI18n }}</a>
-              </li>
-            </ul>
-          </li>
-
-          <!-- User w/ No Dropdown -->
-
-          <!--
-          <li class="nav-item-iconic">
-            <span title="Username"
-                  class="fa pficon-user"></span>
-            <span class="username">{{( user | async)?.name || ( user | async)?.fullName || ( user | async)?.username}}</span>
-          </li>
-          -->
-
-          <!-- User Dropdown -->
-          <li dropdown
-              class="dropdown user">
-            <button dropdownToggle
-              class="btn btn-link dropdown-toggle nav-item-iconic"
-                id="userDropdown"
-                aria-haspopup="true"
-                aria-controls="userDropdownMenu"
-                aria-label="User Dropdown"
-                role="link"
-                aria-expanded="false">
-              <span title="Username" class="fa pficon-user"></span>
-              <span class="dropdown-title">
-                <span class="username">{{ ( user$ | async)?.username }}</span>
-                <span class="caret"></span>
-              </span>
-            </button>
-            <ul *dropdownMenu class="dropdown-menu" id="userDropdownMenu" aria-labelledby="userDropdown">
-              <li>
-                <a (click)="logout()" role="link">{{ 'header.usermenu.logout' | synI18n }}</a>
-              </li>
-              <!--
-              <li>
-                <a (click)="resetDB()" role="link">Reset DB</a>
-              </li>
-              <li>
-                <a (click)="exportDB()" role="link">Export DB</a>
-              </li>
-              <li>
-                <a (click)="showImportDB()" role="link">Import DB</a>
-              </li>
-              -->
-            </ul>
-          </li>
-        </ul>
-      </nav>
+      <div class="pf-c-page__header-tools">
+        <div class="pf-l-toolbar">
+        <div class="pf-l-toolbar__group pf-m-icons pf-screen-reader">
+          <div class="pf-l-toolbar__item">
+            <button class="pf-c-button pf-m-plain" aria-label="Notifications">
+                        <i class="fas fa-bell" aria-hidden="true"></i></button>
+          </div>
+          <div class="pf-l-toolbar__item">
+            <button class="pf-c-button pf-m-plain" aria-label="Settings">
+                        <i class="fas fa-cog" aria-hidden="true"></i></button>
+          </div>
+        </div>
+        <div class="pf-l-toolbar__group">
+          <div class="pf-l-toolbar__item pf-m-mobile">
+            <button class="pf-c-button pf-m-plain" aria-label="Overflow actions">
+                        <i class="fas fa-ellipsis-v" aria-hidden="true"></i></button>
+          </div>
+          <div class="pf-l-toolbar__item pf-m-user pf-screen-reader">
+            <div class="pf-c-dropdown">
+              <button id="page-layout-default-nav-dropdown-button" class="pf-c-dropdown__toggle pf-m-plain" aria-expanded="false">
+                          Kyle Baker
+                <i class="fas fa-caret-down pf-c-dropdown__toggle-icon" aria-hidden="true"></i>  </button>
+                <div class="pf-c-dropdown__menu" hidden="">
+                            Kyle Baker
+                </div>
+            </div>
+          </div>
+        </div>
+        </div>
+          <img class="pf-c-avatar" src="/assets/images/img_avatar.svg" alt="Avatar Image"> 
+      </div>
     </div>
-    <!--/.navbar-->
+    <!-- MASTHEAD PF4 CONVERSION -->
 
   </header>
 
-  <!-- Sidebar PF4-->
-  <div class="pf-c-page__sidebar">
-    <nav class="pf-c-nav" id="page-layout-simple-nav-simple-nav" aria-label="Simple Nav Example">
-      <ul class="pf-c-nav__simple-list">
-        <li class="pf-c-nav__item">
-          <a href="#" class="pf-c-nav__link">
-            <span class="fa fa-tachometer" data-toggle="tooltip" title="Dashboard"></span>
-            <span class="list-group-item-value">{{ 'menu.home' | synI18n }}</span>
-          </a>
-        </li>
-        <li class="pf-c-nav__item">
-          <a href="#" class="pf-c-nav__link">
-            <span class="pficon pficon-topology" data-toggle="tooltip" title="Integrations"></span>
-            <span class="list-group-item-value">{{ 'menu.integrations' | synI18n }}</span>
-          </a>
-        </li>
-        <li class="pf-c-nav__item">
-          <a href="#" class="pf-c-nav__link pf-m-current" aria-current="page">
-            <span class="pficon pficon-network" data-toggle="tooltip" title="Connections"></span>
-            <span class="list-group-item-value">{{ 'menu.connections' | synI18n }}</span>
-          </a>
-        </li>
-        <li class="pf-c-nav__item">
-          <a href="#" class="pf-c-nav__link">
-            <span class="pficon pficon-network" data-toggle="tooltip" title="Customizations"></span>
-            <span class="list-group-item-value">{{ 'menu.customizations' | synI18n }}</span>
-          </a>
-        </li>
-        <li class="pf-c-nav__item">
-          <a href="#" class="pf-c-nav__link">
-            <span class="fa fa-lock" data-toggle="tooltip" title="Settings"></span>
-            <span class="list-group-item-value">{{ 'menu.settings' | synI18n }}</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-
-  <!-- Sidebar PF3 -->
-  <!-- <nav class="nav-pf-vertical hidden-icons-pf" role="navigation" *ngIf="loggedIn">
+  <!-- Sidebar -->
+  <nav class="nav-pf-vertical hidden-icons-pf" role="navigation" *ngIf="loggedIn">
     <ul class="list-group" role="list">
       <li class="list-group-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <a routerLink="/" role="link">
@@ -271,10 +164,8 @@
         </div>
       </li>
     </ul>
-  </nav> -->
-
-  
-  <main role="main" class="container-fluid container-pf-nav-pf-vertical pf-c-page__main" *ngIf="loggedIn">
+  </nav>
+  <main role="main" class="container-fluid container-pf-nav-pf-vertical" *ngIf="loggedIn">
     <router-outlet></router-outlet>
   </main>
 

@@ -17,6 +17,38 @@ main {
   -webkit-overflow-scrolling: touch;
 }
 
+.pf-c-page__header {
+  display: flex;
+  align-items: center;
+  grid-area: header;
+  z-index: 300;
+  flex-wrap: wrap;
+  max-width: 100%;
+  min-height: 76px;
+  border: 1px solid red;
+
+  .pf-c-page__header-brand {
+    .pf-c-page__header-brand-toggle {
+
+    }
+    a.pf-c-page__header-brand-link {
+
+    }
+  }
+  .pf-c-page__header-tools {
+   .pf-l-toolbar {
+     .pf-l-toolbar__group {
+       .pf-l-toolbar__item {
+
+       }
+     }
+   }
+   img.pf-c-avatar {
+
+   }
+  }
+}
+
 // Navigation bar for PF3 to PF4 conversion
 .app {
   .pf-c-page__sidebar {
