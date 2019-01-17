@@ -138,8 +138,46 @@
 
   </header>
 
-  <!-- Sidebar -->
-  <nav class="nav-pf-vertical hidden-icons-pf" role="navigation" *ngIf="loggedIn">
+  <!-- Sidebar PF4-->
+  <div class="pf-c-page__sidebar">
+    <nav class="pf-c-nav" id="page-layout-simple-nav-simple-nav" aria-label="Simple Nav Example">
+      <ul class="pf-c-nav__simple-list">
+        <li class="pf-c-nav__item">
+          <a href="#" class="pf-c-nav__link">
+            <span class="fa fa-tachometer" data-toggle="tooltip" title="Dashboard"></span>
+            <span class="list-group-item-value">{{ 'menu.home' | synI18n }}</span>
+          </a>
+        </li>
+        <li class="pf-c-nav__item">
+          <a href="#" class="pf-c-nav__link">
+            <span class="pficon pficon-topology" data-toggle="tooltip" title="Integrations"></span>
+            <span class="list-group-item-value">{{ 'menu.integrations' | synI18n }}</span>
+          </a>
+        </li>
+        <li class="pf-c-nav__item">
+          <a href="#" class="pf-c-nav__link pf-m-current" aria-current="page">
+            <span class="pficon pficon-network" data-toggle="tooltip" title="Connections"></span>
+            <span class="list-group-item-value">{{ 'menu.connections' | synI18n }}</span>
+          </a>
+        </li>
+        <li class="pf-c-nav__item">
+          <a href="#" class="pf-c-nav__link">
+            <span class="pficon pficon-network" data-toggle="tooltip" title="Customizations"></span>
+            <span class="list-group-item-value">{{ 'menu.customizations' | synI18n }}</span>
+          </a>
+        </li>
+        <li class="pf-c-nav__item">
+          <a href="#" class="pf-c-nav__link">
+            <span class="fa fa-lock" data-toggle="tooltip" title="Settings"></span>
+            <span class="list-group-item-value">{{ 'menu.settings' | synI18n }}</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Sidebar PF3 -->
+  <!-- <nav class="nav-pf-vertical hidden-icons-pf" role="navigation" *ngIf="loggedIn">
     <ul class="list-group" role="list">
       <li class="list-group-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
         <a routerLink="/" role="link">
@@ -233,8 +271,10 @@
         </div>
       </li>
     </ul>
-  </nav>
-  <main role="main" class="container-fluid container-pf-nav-pf-vertical" *ngIf="loggedIn">
+  </nav> -->
+
+  
+  <main role="main" class="container-fluid container-pf-nav-pf-vertical pf-c-page__main" *ngIf="loggedIn">
     <router-outlet></router-outlet>
   </main>
 

@@ -7,7 +7,45 @@ main {
 }
 
 main {
-  position: relative;
+  grid-area: main;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding-right: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+// Navigation bar for PF3 to PF4 conversion
+.app {
+  .pf-c-page__sidebar {
+    grid-area: 2/1;
+    @media screen and (min-width: 768px) {
+      background-color: cornflowerblue;
+      box-shadow: 12px 0px 10px -4px rgba(#030303, .07);
+      max-width: 290px;
+      flex: 1 1;
+      order: 0;
+      transform: translate3d(0, 0, 0);
+    }
+      nav.pf-c-nav {
+        background-color: #ffffff;
+        display: block;
+        ul.pf-c-nav__simple-list {
+        li.pf-c-nav__item {
+          a.pf-c-nav__link {
+            span.pficon {
+
+            }
+            span.list-group-item-value {
+
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .app {
