@@ -66,10 +66,71 @@
           </a>
         </li>
         <li class="pf-c-nav__item">
-          <a href="#" class="pf-c-nav__link" routerLink="settings" role="link" >
+          <a href="#" class="pf-c-nav__link" routerLink="settings" role="link" routerLinkActive="active">
             <span class="fa fa-lock" data-toggle="tooltip" title="Settings"></span>
             <span class="list-group-item-value">{{ 'menu.settings' | synI18n }}</span>
           </a>
+        </li>
+        <li class="list-group-item secondary-nav-item-pf mobile-nav-item-pf visible-xs-block">
+          <a role="link">
+            <span class="pficon pficon-user"
+                  data-toggle="tooltip"
+                  title="User"></span>
+            <span class="list-group-item-value">{{ 'user' | synI18n }}</span>
+          </a>
+          <div class="nav-pf-secondary-nav">
+            <div class="nav-item-pf-header">
+              <a role="button" class="secondary-collapse-toggle-pf" data-toggle="collapse-secondary-nav"></a>
+              <span>{{ 'user' | synI18n }}</span>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <a (click)="logout()" role="link">
+                  <span class="list-group-item-value">{{ 'header.usermenu.logout' | synI18n }}</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="list-group-item secondary-nav-item-pf mobile-nav-item-pf visible-xs-block">
+          <a role="link">
+            <span class="pficon pficon-help"
+                  data-toggle="tooltip"
+                  title="User"></span>
+            <span class="list-group-item-value">{{ 'help' | synI18n }}</span>
+          </a>
+          <div class="nav-pf-secondary-nav">
+            <div class="nav-item-pf-header">
+              <a role="button" class="secondary-collapse-toggle-pf" data-toggle="collapse-secondary-nav"></a>
+              <span>{{ 'help' | synI18n }}</span>
+            </div>
+            <ul class="list-group">
+              <li class="list-group-item">
+                <a [attr.href]="'links.tutorial' | synI18n"
+                  rel="nofollow"
+                  role="link"
+                  target="_blank"
+                  class="list-group-item-value">{{ 'header.helpmenu.sampletutorials' | synI18n }}</a>
+              </li>
+              <li class="list-group-item">
+                <a [attr.href]="'links.userguide' | synI18n:' '"
+                  rel="nofollow"
+                  role="link"
+                  target="_blank"
+                  class="list-group-item-value">{{ 'header.helpmenu.userguide' | synI18n }}</a>
+              </li>
+              <li class="list-group-item">
+                <a routerLink="/support" role="link"  class="list-group-item-value">{{ 'support' | synI18n }}</a>
+              </li>
+              <li class="list-group-item">
+                <a href="mailto:{{ 'email' | synI18n }}"
+                  rel="nofollow"
+                  role="link"
+                  target="_blank"
+                  class="list-group-item-value">{{ 'contactus' | synI18n }}</a>
+              </li>
+            </ul>
+          </div>
         </li>
       </ul>
     </nav>
