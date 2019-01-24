@@ -49,6 +49,7 @@
               "node_modules/patternfly-ng/dist/css/patternfly-ng.min.css",
               "node_modules/@patternfly/patternfly-next/patternfly-base.css",
               "node_modules/@patternfly/patternfly-next/components/Page/page.css",
+              "node_modules/@patternfly/patternfly-next/components/BackgroundImage/background-image.css",
               "src/styles.scss"
             ],
             "scripts": [
