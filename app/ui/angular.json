@@ -50,6 +50,9 @@
               "node_modules/@patternfly/patternfly-next/patternfly-base.css",
               "node_modules/@patternfly/patternfly-next/components/Page/page.css",
               "node_modules/@patternfly/patternfly-next/components/BackgroundImage/background-image.css",
+              "node_modules/@patternfly/patternfly-next/components/Dropdown/dropdown.css",
+              "node_modules/@patternfly/patternfly-next/components/Avatar/avatar.css",
+              "node_modules/@patternfly/patternfly-next/components/Nav/nav.css",
               "src/styles.scss"
             ],
             "scripts": [
