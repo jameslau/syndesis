@@ -33,6 +33,7 @@ import {
 })
 export class AppComponent implements OnInit, AfterViewInit {
   helpExpanded = false;
+  userMenuExpanded = false;
   // TODO icon?
   /**
    * Logo with white background.
@@ -234,6 +235,13 @@ export class AppComponent implements OnInit, AfterViewInit {
    */
   expandHelpDropdown(): void {
     this.helpExpanded = this.helpExpanded ? false : true;
+  }
+
+  /**
+   * Expands the logout dropdown menu within the masthead.
+   */
+  userMenuDropdown(): void {
+    this.userMenuExpanded = this.userMenuExpanded ? false : true;
   }
 
   ngAfterViewInit() {

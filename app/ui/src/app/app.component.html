@@ -30,17 +30,6 @@
 
     <div class="pf-c-page__header-tools">
 
-
-      <!-- <div class="pf-c-page__header-tools-group pf-m-icons pf-screen-reader">
-        <button class="pf-c-button pf-m-plain" aria-label="Alerts">
-          <i class="fas fa-bell" aria-hidden="true"></i>
-        </button>
-        <button class="pf-c-button pf-m-plain" aria-label="Settings">
-          <i class="fas fa-cog" aria-hidden="true"></i>
-        </button>
-      </div> -->
-
-
       <div class="pf-c-page__header-tools-group">
         <button class="pf-c-button pf-m-plain pf-m-mobile" aria-label="Overflow actions">
           <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
@@ -48,7 +37,7 @@
         <div class="pf-m-user pf-screen-reader">
           <div class="pf-c-dropdown">
             <button 
-              id="page-layout-default-nav-dropdown-button" 
+              id="helpDropdownButton" 
               class="pf-c-dropdown__toggle pf-m-plain" 
               aria-expanded="false"
               (click)="expandHelpDropdown()">
@@ -56,7 +45,7 @@
             </button>
             <ul 
               class="pf-c-dropdown__menu" 
-              aria-labelledby="dropdown-example-expanded-button"
+              aria-labelledby="helpDropdownButton"
               *ngIf="helpExpanded">
                 <li>
                   <a
@@ -105,25 +94,35 @@
         </div>
       </div>
 
-
       <div class="pf-c-page__header-tools-group">
           <button class="pf-c-button pf-m-plain pf-m-mobile" aria-label="Overflow actions">
             <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
           </button>
           <div class="pf-m-user pf-screen-reader">
             <div class="pf-c-dropdown">
-              <button id="page-layout-default-nav-dropdown-button" class="pf-c-dropdown__toggle pf-m-plain" aria-expanded="false">
-                Username
+              <button 
+                id="userMenuDropdownButton" 
+                class="pf-c-dropdown__toggle pf-m-plain" 
+                aria-expanded="false"
+                (click)="userMenuDropdown()">
+                {{ ( user$ | async)?.username }}
                 <img class="pf-c-avatar" src="/assets/images/img_avatar.svg" alt="Avatar Image">
               </button>
-              <div class="pf-c-dropdown__menu" hidden>
-                Username
-              </div>
+              <ul 
+                class="pf-c-dropdown__menu" 
+                aria-labelledby="userMenuDropdownButton"
+                *ngIf="userMenuExpanded">
+                <li>
+                  <a
+                    (click)="logout()" 
+                    class="pf-c-dropdown__menu-item"                  
+                    role="link">{{ 'header.usermenu.logout' | synI18n }}
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-  
-    
     </div>
 
   </header>
