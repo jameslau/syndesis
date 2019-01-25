@@ -21,9 +21,18 @@
     <!-- LOGO -->
     <div class="pf-c-page__header-brand">
       <div class="pf-c-page__header-brand-toggle">
-        <button class="pf-c-button pf-m-plain" id="page-layout-default-nav-nav-toggle" aria-label="Toggle primary navigation" aria-expanded="true">
+
+
+        <button 
+          class="pf-c-button pf-m-plain" 
+          id="page-layout-default-nav-nav-toggle" 
+          aria-label="Toggle primary navigation" 
+          aria-expanded="true"
+          (click)="hamburgerToggle()">
           <i class="fas fa-bars" aria-hidden="true"></i>
         </button>
+
+
       </div>
       <img class="pf-c-brand" [src]="loggedIn ? logoDarkBg : logoWhiteBg" alt="Syndesis Logo">
     </div>
@@ -126,7 +135,7 @@
     </div>
 
   </header>
-  <aside class="pf-c-page__sidebar">
+  <aside class="pf-c-page__sidebar" [ngClass]="{'pf-m-collapsed': menuExpanded}">
     <nav class="pf-c-nav" id="page-layout-default-nav-primary-nav" aria-label="Primary Nav Default Example">
       <ul class="pf-c-nav__list">
         <li class="pf-c-nav__item">

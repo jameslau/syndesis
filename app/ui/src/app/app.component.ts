@@ -34,6 +34,7 @@ import {
 export class AppComponent implements OnInit, AfterViewInit {
   helpExpanded = false;
   userMenuExpanded = false;
+  menuExpanded = false;
   // TODO icon?
   /**
    * Logo with white background.
@@ -242,6 +243,13 @@ export class AppComponent implements OnInit, AfterViewInit {
    */
   userMenuDropdown(): void {
     this.userMenuExpanded = this.userMenuExpanded ? false : true;
+  }
+
+  /**
+   * Expands and contracts the vertical navigation menu.
+   */
+  hamburgerToggle(): void {
+    this.menuExpanded = !this.menuExpanded;
   }
 
   ngAfterViewInit() {
