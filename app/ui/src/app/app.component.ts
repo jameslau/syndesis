@@ -32,6 +32,7 @@ import {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit, AfterViewInit {
+  helpExpanded = false;
   // TODO icon?
   /**
    * Logo with white background.
@@ -226,6 +227,13 @@ export class AppComponent implements OnInit, AfterViewInit {
    */
   handleClose($event: NotificationEvent): void {
     this.notificationService.remove($event.notification);
+  }
+
+  /**
+   * Expands the help dropdown menu within the masthead.
+   */
+  expandHelpDropdown(): void {
+    this.helpExpanded = this.helpExpanded ? false : true;
   }
 
   ngAfterViewInit() {

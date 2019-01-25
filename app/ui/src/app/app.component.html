@@ -47,13 +47,60 @@
         </button>
         <div class="pf-m-user pf-screen-reader">
           <div class="pf-c-dropdown">
-            <button id="page-layout-default-nav-dropdown-button" class="pf-c-dropdown__toggle pf-m-plain" aria-expanded="false">
-              
+            <button 
+              id="page-layout-default-nav-dropdown-button" 
+              class="pf-c-dropdown__toggle pf-m-plain" 
+              aria-expanded="false"
+              (click)="expandHelpDropdown()">
               <i class="fas fa-question-circle pf-c-dropdown__toggle-icon" aria-hidden="true"></i>
             </button>
-            <div class="pf-c-dropdown__menu" hidden>
-              Username
-            </div>
+            <ul 
+              class="pf-c-dropdown__menu" 
+              aria-labelledby="dropdown-example-expanded-button"
+              *ngIf="helpExpanded">
+                <li>
+                  <a
+                    class="pf-c-dropdown__menu-item" 
+                    [attr.href]="'links.tutorial' | synI18n" 
+                    rel="nofollow" 
+                    role="link" 
+                    target="_blank">{{ 'header.helpmenu.sampletutorials' | synI18n }}
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    [attr.href]="'links.userguide' | synI18n:' '"
+                    rel="nofollow"
+                    role="link"
+                    target="_blank"
+                    class="pf-c-dropdown__menu-item">{{ 'header.helpmenu.userguide' | synI18n }}
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    [attr.href]="'links.connectorsguide' | synI18n:' '"
+                    rel="nofollow"
+                    role="link"
+                    target="_blank"
+                    class="pf-c-dropdown__menu-item">{{ 'header.helpmenu.connectorsguide' | synI18n }}
+                  </a>
+                </li>
+                <li>
+                  <a 
+                    routerLink="/support" 
+                    role="link"  
+                    class="pf-c-dropdown__menu-item">{{ 'support' | synI18n }}
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:{{ 'email' | synI18n }}"
+                    rel="nofollow"
+                    role="link"
+                    target="_blank"
+                    class="pf-c-dropdown__menu-item">{{ 'contactus' | synI18n }}
+                  </a>
+                </li>
+              </ul>
           </div>
         </div>
       </div>
@@ -108,6 +155,13 @@
             {{ 'menu.settings' | synI18n }}
           </a>
         </li>
+
+
+
+
+
+
+
         <li class="list-group-item secondary-nav-item-pf mobile-nav-item-pf visible-xs-block">
           <a role="link">
             <span class="pficon pficon-user"
@@ -142,20 +196,8 @@
               <span>{{ 'help' | synI18n }}</span>
             </div>
             <ul class="list-group">
-              <li class="list-group-item">
-                <a [attr.href]="'links.tutorial' | synI18n"
-                  rel="nofollow"
-                  role="link"
-                  target="_blank"
-                  class="list-group-item-value">{{ 'header.helpmenu.sampletutorials' | synI18n }}</a>
-              </li>
-              <li class="list-group-item">
-                <a [attr.href]="'links.userguide' | synI18n:' '"
-                  rel="nofollow"
-                  role="link"
-                  target="_blank"
-                  class="list-group-item-value">{{ 'header.helpmenu.userguide' | synI18n }}</a>
-              </li>
+              
+              
               <li class="list-group-item">
                 <a routerLink="/support" role="link"  class="list-group-item-value">{{ 'support' | synI18n }}</a>
               </li>
@@ -169,6 +211,11 @@
             </ul>
           </div>
         </li>
+
+
+
+
+
       </ul>
     </nav>
   </aside>
