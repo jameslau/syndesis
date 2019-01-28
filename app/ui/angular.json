@@ -52,7 +52,6 @@
               "node_modules/@patternfly/patternfly-next/components/BackgroundImage/background-image.css",
               "node_modules/@patternfly/patternfly-next/components/Dropdown/dropdown.css",
               "node_modules/@patternfly/patternfly-next/components/Avatar/avatar.css",
-              "node_modules/@patternfly/patternfly-next/components/Nav/nav.css",
               "node_modules/@patternfly/patternfly-next/components/Button/button.css",
               "src/styles.scss"
             ],

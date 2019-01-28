@@ -15,9 +15,18 @@ body.cards-pf {
   margin-bottom: 10px;
 }
 
-.layout-pf.layout-pf-fixed .container-pf-nav-pf-vertical.collapsed-nav {
+// .layout-pf.layout-pf-fixed .container-pf-nav-pf-vertical.collapsed-nav {
+//   margin-left: 0;
+// }
+
+.pf-c-page__main.collapsed-nav {
   margin-left: 0;
 }
+
+.pf-c-page__main {
+  margin-left: 290px;
+}
+
 
 .navbar {
   a {
